@@ -1,0 +1,17 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="CardTemplate" usage-hints="DynamicColor" style="transition-duration: 0.6s;">
+        <ui:VisualElement name="card-border" class="card-border">
+            <ui:VisualElement name="card-content" class="card-content">
+                <ui:VisualElement name="img-container">
+                    <ui:VisualElement name="image" class="image" />
+                </ui:VisualElement>
+                <ui:VisualElement name="name-box" style="flex-basis: 60px; align-items: center; justify-content: center; align-self: auto;">
+                    <ui:Label tabindex="-1" text="신검 1등급" parse-escape-sequences="true" display-tooltip-when-elided="true" name="name-label" class="name-label" />
+                </ui:VisualElement>
+                <ui:VisualElement name="info-box" style="justify-content: center; align-self: stretch; height: 80px; width: 100%; background-color: rgb(233, 233, 233);">
+                    <ui:Label tabindex="-1" text="레츠고 동두천" parse-escape-sequences="true" display-tooltip-when-elided="true" name="info-label" style="-unity-text-align: middle-center; -unity-font-definition: initial; -unity-font: url(&apos;project://database/Assets/HeirofLightBold.ttf?fileID=12800000&amp;guid=07d3f3d0754b8824cb1dcb21b3c75976&amp;type=3#HeirofLightBold&apos;); font-size: 15px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
