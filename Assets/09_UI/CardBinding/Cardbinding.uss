@@ -73,6 +73,9 @@
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
+    translate: 0 -400px;
+    opacity: 0;
+    transition-duration: 0.6s;
 }
 
 .card-border:hover {
@@ -94,7 +97,7 @@
     border-bottom-color: rgb(0, 0, 0);
     -unity-font-definition: initial;
     -unity-font: url('project://database/Assets/HeirofLightBold.ttf?fileID=12800000&guid=07d3f3d0754b8824cb1dcb21b3c75976&type=3#HeirofLightBold');
-    font-size: 85px;
+    font-size: 67px;
     border-top-left-radius: 44px;
     border-top-right-radius: 44px;
     border-bottom-right-radius: 44px;
@@ -103,6 +106,8 @@
     border-right-width: 9px;
     border-bottom-width: 9px;
     border-left-width: 9px;
+    width: 214px;
+    height: 152px;
 }
 
 .btn:hover {
@@ -129,4 +134,9 @@
     border-top-width: 0;
     border-right-width: 0;
     border-left-width: 0;
+}
+
+.card-border.on {
+    opacity: 1;
+    translate: 0 0;
 }

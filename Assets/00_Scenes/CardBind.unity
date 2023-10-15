@@ -184,6 +184,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8954adb6b9cbfb945a02f380722a6281, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _charSOList:
+  - {fileID: 11400000, guid: 55ed0cb711c5a9f48a7587bb6ed58fbf, type: 2}
+  - {fileID: 11400000, guid: 91689780e19ac564983a27dcca43ef9f, type: 2}
+  - {fileID: 11400000, guid: b13167ac730ddd944a6ab98caec78837, type: 2}
+  - {fileID: 11400000, guid: 43c95121770c29d41942ee0f9717ace5, type: 2}
+  _defaultSprit: {fileID: 21300000, guid: a62331fbd901efc40b07747e52a5c956, type: 3}
   _cardTemplate: {fileID: 9197481963319205126, guid: 51fefcbbb95aedf41be97c060208f966, type: 3}
 --- !u!1 &1370780857
 GameObject:

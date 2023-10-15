@@ -1,16 +1,16 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:Template name="CardTemplate" src="project://database/Assets/09_UI/CardBinding/CardTemplate.uxml?fileID=9197481963319205126&amp;guid=51fefcbbb95aedf41be97c060208f966&amp;type=3#CardTemplate" />
     <Style src="project://database/Assets/09_UI/CardBinding/Cardbinding.uss?fileID=7433441132597879392&amp;guid=9316a0b3d8002ed45b018e68700e31b9&amp;type=3#Cardbinding" />
     <ui:VisualElement name="container" style="flex-grow: 1;">
         <ui:VisualElement name="side-bar" class="side-bar">
-            <ui:Button text="AddCard" parse-escape-sequences="true" display-tooltip-when-elided="true" name="add-btn" class="btn" style="transition-duration: 0.4s; top: auto; margin-top: 50px;" />
+            <ui:VisualElement name="btn-row" style="flex-grow: 0; flex-direction: row;">
+                <ui:Button text="Add" parse-escape-sequences="true" display-tooltip-when-elided="true" name="btn-add-card" class="btn" style="transition-duration: 0.4s; top: auto; margin-top: 50px;" />
+                <ui:Button text="Show" parse-escape-sequences="true" display-tooltip-when-elided="true" name="btn-show-all" class="btn" style="transition-duration: 0.4s; top: auto; margin-top: 50px;" />
+            </ui:VisualElement>
             <ui:VisualElement name="input-box" style="margin-top: 60px; align-items: center; justify-content: space-between; align-self: stretch;">
                 <ui:TextField picking-mode="Ignore" value="Name" name="txt-name" class="input-control" />
                 <ui:TextField picking-mode="Ignore" value="Description" name="txt-desc" class="input-control" />
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="content" class="content" style="flex-grow: 1;">
-            <ui:Instance template="CardTemplate" name="CardTemplate" />
-        </ui:VisualElement>
+        <ui:VisualElement name="content" class="content" style="flex-grow: 1;" />
     </ui:VisualElement>
 </ui:UXML>

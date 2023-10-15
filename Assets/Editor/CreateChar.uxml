@@ -1,0 +1,14 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Editor/CreateChar.uss?fileID=7433441132597879392&amp;guid=5f23d23627d89b748aeaa467c3969a25&amp;type=3#CreateChar" />
+    <ui:VisualElement name="container" style="flex-grow: 1; background-image: none;">
+        <ui:VisualElement style="flex-grow: 1; background-image: url(&apos;project://database/Assets/02_Sprits/UI/KakaoTalk_20231014_211003608_10.jpg?fileID=2800000&amp;guid=8a8ab796ee0fd1948bb2a35500b6f00a&amp;type=3#KakaoTalk_20231014_211003608_10&apos;); height: 20%; width: 100%;" />
+        <ui:VisualElement name="input-box" style="flex-grow: 1;">
+            <ui:TextField picking-mode="Ignore" label="캐릭터 이름" name="txt-name" class="input-field" />
+            <ui:TextField picking-mode="Ignore" label="캐릭터 설명" name="txt-desc" multiline="false" class="input-field multiline" />
+            <uie:ObjectField label="Sprite" name="object-sprite" type="UnityEngine.Sprite, UnityEngine.CoreModule" class="input-field" />
+        </ui:VisualElement>
+        <ui:VisualElement name="button-row" style="flex-grow: 1;">
+            <ui:Button text="만들기&#10;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="btn-create" class="btn" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
