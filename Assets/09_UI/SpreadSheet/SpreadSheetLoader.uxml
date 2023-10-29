@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/09_UI/SpreadSheet/SpreadSheetLoader.uss?fileID=7433441132597879392&amp;guid=c182c47c76683874597451a2bdd6efdc&amp;type=3#SpreadSheetLoader" />
+    <ui:VisualElement name="container" class="container">
+        <ui:VisualElement name="top-row" class="top-row">
+            <ui:TextField picking-mode="Ignore" value="urlhere" name="txt-url" class="txt-url" style="-unity-background-image-tint-color: rgba(255, 255, 255, 0.09);" />
+            <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="btn-load" class="btn" style="transition-duration: 0.6s;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="content-row" style="flex-grow: 1; padding-top: 30px; align-items: flex-start;">
+            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="status-label" style="font-size: 31px; -unity-font-definition: initial; -unity-font: url(&apos;project://database/Assets/HeirofLightBold.ttf?fileID=12800000&amp;guid=07d3f3d0754b8824cb1dcb21b3c75976&amp;type=3#HeirofLightBold&apos;);" />
+            <ui:VisualElement name="loading-icon" class="loading-icon off" style="transition-duration: 0.3s; left: 158px; top: 184px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

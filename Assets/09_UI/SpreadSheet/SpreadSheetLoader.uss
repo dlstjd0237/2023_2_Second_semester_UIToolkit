@@ -1,0 +1,72 @@
+.container {
+    flex-grow: 1;
+    padding-top: 15px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.top-row {
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+}
+
+.txt-url {
+    flex-grow: 1;
+}
+
+.btn {
+    -unity-font-definition: initial;
+    -unity-font: url('project://database/Assets/HeirofLightBold.ttf?fileID=12800000&guid=07d3f3d0754b8824cb1dcb21b3c75976&type=3#HeirofLightBold');
+    background-color: rgb(165, 202, 255);
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    -unity-text-outline-width: 0.2px;
+    -unity-text-outline-color: rgb(0, 0, 0);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    flex-shrink: 0;
+}
+
+.txt-url > #unity-text-input {
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.18);
+    margin-right: 24px;
+    padding-right: 15px;
+    padding-left: 15px;
+    -unity-font-definition: initial;
+    -unity-font: url('project://database/Assets/HeirofLightBold.ttf?fileID=12800000&guid=07d3f3d0754b8824cb1dcb21b3c75976&type=3#HeirofLightBold');
+    font-size: 17px;
+    -unity-text-align: middle-left;
+    text-overflow: ellipsis;
+}
+
+.btn:hover {
+    background-color: rgb(51, 160, 209);
+    cursor: initial;
+}
+
+.loading-icon {
+    flex-grow: 0;
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    translate: -50% -50%;
+    background-image: url('project://database/Assets/02_Sprits/UI/KakaoTalk_20231014_211003608_10.jpg?fileID=2800000&guid=8a8ab796ee0fd1948bb2a35500b6f00a&type=3#KakaoTalk_20231014_211003608_10');
+}
+
+.loading-icon.off {
+    visibility: hidden;
+    opacity: 0;
+}

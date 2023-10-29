@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/MessageSystem/UI/MessageUI.uss?fileID=7433441132597879392&amp;guid=780660c2d61b85644b725c3b321e4d15&amp;type=3#MessageUI" />
+    <ui:VisualElement name="message" class="message" style="transition-duration: 0.6s;">
+        <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="message-label" text="메세" />
+    </ui:VisualElement>
+</ui:UXML>
