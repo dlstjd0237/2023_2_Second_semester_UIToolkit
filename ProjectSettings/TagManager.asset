@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Floor
+    uniqueID: 3655491645
+    locked: 0
+  - name: CameraSortingLayers
+    uniqueID: 997876571
+    locked: 0
+  - name: Wall
+    uniqueID: 77073715
+    locked: 0
+  - name: Agent
+    uniqueID: 3779858011
+    locked: 0

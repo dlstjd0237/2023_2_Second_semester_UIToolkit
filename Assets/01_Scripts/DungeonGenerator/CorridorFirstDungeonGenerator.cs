@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using UnityEngine;
 public class CorridorFirstDungeonGenerator : SimpleRandomWalkGenerator
 {
     [SerializeField] private int _corridorLength = 14, _corridorCount = 5;
-    [SerializeField] [Range(0.1f, 1f)] private float _roomPercent = 0.6f; //²¿´Ù¸®Áß 60%°¡ ¹æÀ¸·Î
+    [SerializeField] [Range(0.1f, 1f)] private float _roomPercent = 0.6f; //ê¼¬ë‹¤ë¦¬ì¤‘ 60%ê°€ ë°©ìœ¼ë¡œ
     [SerializeField] private bool _brush3X3 = false;
     protected override void RunProceduralGeneration()
     {
@@ -15,12 +15,12 @@ public class CorridorFirstDungeonGenerator : SimpleRandomWalkGenerator
     }
     private void CorridorFirstGeneration()
     {
-        //¹Ù´ÚÀÇ À§Ä¡µéÀÌ°í
+        //ë°”ë‹¥ì˜ ìœ„ì¹˜ë“¤ì´ê³ 
         HashSet<Vector2Int> floorPosition = new HashSet<Vector2Int>();
-        //ÀÌ°Ç ¹æÀÌ µÉ¼öµµ ÀÖ´Â À§Ä¡µéÀÌ´Ù.
+        //ì´ê±´ ë°©ì´ ë ìˆ˜ë„ ìˆëŠ” ìœ„ì¹˜ë“¤ì´ë‹¤.
         HashSet<Vector2Int> potentialRoomPosition = new HashSet<Vector2Int>();
 
-        //º¹µµ »ı¼ºÇÏ°í, ³ªÁß¿¡ ÀÌ°É ÀÌ¿ëÇØ¼­ º¹µµ Å©±â¸¦ 3x3Å©±â·Î
+        //ë³µë„ ìƒì„±í•˜ê³ , ë‚˜ì¤‘ì— ì´ê±¸ ì´ìš©í•´ì„œ ë³µë„ í¬ê¸°ë¥¼ 3x3í¬ê¸°ë¡œ
         List<List<Vector2Int>> corridors = CreateCorridors(floorPosition, potentialRoomPosition);
 
         HashSet<Vector2Int> roomFloors = CreateRooms(potentialRoomPosition);
@@ -33,7 +33,7 @@ public class CorridorFirstDungeonGenerator : SimpleRandomWalkGenerator
 
         if (_brush3X3)
         {
-            //º¹µµµéÀ» for¹®À» µ¹¸é¼­ È®ÀåÇÏ¸é µÊ
+            //ë³µë„ë“¤ì„ forë¬¸ì„ ëŒë©´ì„œ í™•ì¥í•˜ë©´ ë¨
             for (int i = 0; i < corridors.Count; ++i)
             {
                 corridors[i] = IncreaseCorridorBrush3X3(corridors[i]);
@@ -49,7 +49,7 @@ public class CorridorFirstDungeonGenerator : SimpleRandomWalkGenerator
     private List<Vector2Int> IncreaseCorridorBrush3X3(List<Vector2Int> corridor)
     {
         List<Vector2Int> newCorridors = new List<Vector2Int>();
-        //corridor¾È¿¡ ÀÖ´Â ¸ğµç Á¡¿¡ ´ëÇØ¼­ 8¹æÇâ È®ÀåÀ» ÇÑ Æ÷ÀÎÆ®¸¦ ³Ö¾î¼­ ¸®ÅÏÇÏ¸é µÈ´Ù.
+        //corridorì•ˆì— ìˆëŠ” ëª¨ë“  ì ì— ëŒ€í•´ì„œ 8ë°©í–¥ í™•ì¥ì„ í•œ í¬ì¸íŠ¸ë¥¼ ë„£ì–´ì„œ ë¦¬í„´í•˜ë©´ ëœë‹¤.
 
         for (int i = 1; i < corridor.Count; ++i)
         {
@@ -69,12 +69,12 @@ public class CorridorFirstDungeonGenerator : SimpleRandomWalkGenerator
     {
         foreach (Vector2Int position in deadEnds)
         {
-            //ÀÌ¹Ì ±×°÷¿¡ ¹æÀÌ »ı¼ºµÇ¾îÀÖ´Ù¸é »ı¼ºÇÒ ÇÊ¿ä°¡ ¾ø°Åµç
+            //ì´ë¯¸ ê·¸ê³³ì— ë°©ì´ ìƒì„±ë˜ì–´ìˆë‹¤ë©´ ìƒì„±í•  í•„ìš”ê°€ ì—†ê±°ë“ 
             if (roomFloors.Contains(position) == false)
             {
                 HashSet<Vector2Int> deadEndFloor = RunRandomWalk(position);
                 roomFloors.UnionWith(deadEndFloor);
-                //»ı¼ºÇØ¼­ ÇÕÃÄÁÖ¸éµÈ´Ù.
+                //ìƒì„±í•´ì„œ í•©ì³ì£¼ë©´ëœë‹¤.
             }
         }
     }
@@ -85,8 +85,8 @@ public class CorridorFirstDungeonGenerator : SimpleRandomWalkGenerator
 
         foreach (Vector2Int pos in floorPosition)
         {
-            int neighborCount = 0;//ÀÌ¿ô °¹¼ö
-            foreach (Vector2Int direction in Direction2D.cardianlDirectionList)
+            int neighborCount = 0;//ì´ì›ƒ ê°¯ìˆ˜
+            foreach (Vector2Int direction in Direction2D.diagonalDirectionList)
             {
                 if (floorPosition.Contains(pos + direction))
                 {
@@ -101,10 +101,10 @@ public class CorridorFirstDungeonGenerator : SimpleRandomWalkGenerator
             }
         }
 
-        //floorPosition¿¨ ÀÖ´Â ¸ğµç ¾ÖµéÀ» ´Ù µ¹¸é¼­
-        //°ÂÀÇ ÀÌ¿ôÀÌ 1°³¹Û¿¡ ¾ø´ÂÁö¸¦ Ã¼Å©ÇØ¾ßµğ
-        // ÀÌ¿ôÀº CardirnalDirectionÀ» Ã¼Å©ÇØ¼­
-        //1°³¹Û¿¡ ¾øÀ¸Ã deadEnds¿¡ Ãß°¡ÇÏ°Ô µÈ´Ù.
+        //floorPositionì—¥ ìˆëŠ” ëª¨ë“  ì• ë“¤ì„ ë‹¤ ëŒë©´ì„œ
+        //ê±”ì˜ ì´ì›ƒì´ 1ê°œë°–ì— ì—†ëŠ”ì§€ë¥¼ ì²´í¬í•´ì•¼ë””
+        // ì´ì›ƒì€ CardirnalDirectionì„ ì²´í¬í•´ì„œ
+        //1ê°œë°–ì— ì—†ìœ¼ë¨„ deadEndsì— ì¶”ê°€í•˜ê²Œ ëœë‹¤.
 
         return deadEnds;
     }
@@ -129,22 +129,24 @@ public class CorridorFirstDungeonGenerator : SimpleRandomWalkGenerator
 
     private List<List<Vector2Int>> CreateCorridors(HashSet<Vector2Int> floorPosition, HashSet<Vector2Int> potentialRoomPosition)
     {
-        Vector2Int currentPosition = _startPosition; //½ÃÀÛÁöÁ¡À» ¼³Á¤
+        Vector2Int currentPosition = _startPosition;
 
-        potentialRoomPosition.Add(currentPosition);//ÇöÀçÀ§Ä¡µµ ¹æÀ¸·Î ¸¸µé¾îÁú °¡´É¼ºÀÌ ÀÖ´Â °÷
+        potentialRoomPosition.Add(currentPosition);
 
         List<List<Vector2Int>> corridors = new List<List<Vector2Int>>();
-        for (int i = 0; i < _corridorCount; ++i)
-        {
-            List<Vector2Int> corridor = ProceduralGenerationAlgorithms.RandomWalkCorridor(currentPosition, _corridorLength);
 
+        for (int i = 0; i < _corridorLength; ++i)
+        {
+            List<Vector2Int> corridor = Direction2D.ProceduralGenerationAlgorithms.RandomWalkCorridor(
+                                                                currentPosition, _corridorLength);
             corridors.Add(corridor);
             currentPosition = corridor.Last();
-            //¸¶Áö¸· À§Ä¡¸¦ ½ÃÀÛÀ§Ä¡·Î º¯°æÇÏ°í
+            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             potentialRoomPosition.Add(currentPosition);
-            //¹æÀÌ µÉ °¡´É¼ºÀÌ ÀÖ´Â °÷¿¡ À§Ä¡¸¦ ³Ö¾îÁÖ°í
+            //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½É¼ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½Ö¾ï¿½ï¿½ï¿½
             floorPosition.UnionWith(corridor);
         }
+
         return corridors;
     }
 }

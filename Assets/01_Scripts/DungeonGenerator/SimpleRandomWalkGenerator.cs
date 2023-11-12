@@ -25,7 +25,7 @@ public class SimpleRandomWalkGenerator : AbstractDungeonGenerator
 
         for (int i = 0; i < _walkData.iteration; ++i)
         {
-            var path = ProceduralGenerationAlgorithms.SimpleRandomWalk(currentPosition, _walkData.walkLength);
+            var path = Direction2D.ProceduralGenerationAlgorithms.SimpleRandomWalk(currentPosition, _walkData.walkLength);
             floorPosition.UnionWith(path);//중복 제거하고 병합한다.
 
             //이때 만약 startRandomlyEachIteration이 true면
@@ -37,7 +37,7 @@ public class SimpleRandomWalkGenerator : AbstractDungeonGenerator
         }
         if (_walkData.fillRoom)
         {
-            floorPosition = ProceduralGenerationAlgorithms.FillRoomTile(floorPosition,_walkData.smoothLine);
+            floorPosition = Direction2D.ProceduralGenerationAlgorithms.FillRoomTile(floorPosition,_walkData.smoothLine);
         }
 
 
