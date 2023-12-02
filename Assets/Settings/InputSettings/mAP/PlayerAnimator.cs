@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D.Animation;
-
+using DG.Tweening;
 public class PlayerAnimator : MonoBehaviour
 {
     [SerializeField] private SpriteLibraryAsset[] _spriteAssets;
@@ -39,12 +39,12 @@ public class PlayerAnimator : MonoBehaviour
     private Tween _shockTween;
     private void ShockwaveEffect()
     {
-        if (_shockTween != null && _shockTween.IsActive == true)
+        if (_shockTween != null)
 
-        _shockwaveSprite.gameObject.SetActive(true);
+            _shockwaveSprite.gameObject.SetActive(true);
         _shockwaveMat.SetFloat(_hashWaveDistance, -0.1f);
 
-        _shockTween = DOTween.TO(() => _shockwaveMat.GetFloat(_hashWaveDistance), value => _shockwaveMat.SetFloat(_hashWaveDistance, value), 1f, 0.6f).OnComplete(() => _shockwaveSprite.gameObject.SetActive(false);
+        _shockTween = DOTween.To(() => _shockwaveMat.GetFloat(_hashWaveDistance), value => _shockwaveMat.SetFloat(_hashWaveDistance, value), 1f, 0.6f).OnComplete(() => _shockwaveSprite.gameObject.SetActive(false));
 
     }
 }
